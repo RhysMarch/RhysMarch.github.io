@@ -3,6 +3,12 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+p {
+    font-size: 1.2em;
 }
 
 .background-image {
@@ -27,37 +33,88 @@ body, html {
     z-index: -1;
 }
 
+
+/* ------------------*/
+/* About Me Section */
+/* ------------------*/
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Changed padding to height */
+    scroll-snap-align: start;
+}
+
 .site-header h1 {
     font-size: 5em;
-    position: absolute;
-    top: 5%; /* Adjusted to not be exactly in the middle */
-    left: 50%;
-    transform: translate(-50%, -10%);
-    z-index: 2; /* Ensure this is above the portfolio items */
+    position: relative; /* Changed to relative */
     text-align: center;
     color: white;
-    width: 100%; /* Full width to center the text correctly */
-    margin-bottom: 50px;
+    width: 100%;
+    margin-top: 50px; /* Added margin-top */
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 3;
+}
+
+.about-me {
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    margin-top: 20px; /* Added margin-top */
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .about-me {
+        padding: 15px;
+        margin-top: 10px;
+        max-width: 90%; /* Allow more space on the sides on smaller screens */
+    }
+}
+
+
+/* ------------------*/
+/* Projects Section */
+/* ------------------*/
+
+.projects-section {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+.projects-header h1 {
+    font-size: 5em;
+    text-align: center;
+    color: white;
+    margin-top: 10px; /* Adjusted margin-top */
+    position: relative; /* Changed from absolute to relative */
 }
 
 .portfolio-grid {
-    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 50px; /* Reduced padding */
     justify-content: center;
     align-items: center;
+    padding: 50px;
     max-width: 1800px;
-    z-index: 1;
-    margin: 300px auto auto; /* Adjust the top margin as needed */
 }
 
 .portfolio-item {
-    position: relative; /* Ensure that children can be positioned absolutely within this container */
+    position: relative;
     font-size: 1em;
     width: 100%;
-    padding-top: 50%; /* Keeps the aspect ratio */
+    padding-top: 50%;
     background-color: rgba(255, 255, 255, 0.3);
     display: flex;
     justify-content: center;
@@ -66,7 +123,8 @@ body, html {
     max-width: 600px;
     max-height: 400px;
     margin: auto;
-    overflow: hidden; /* Ensure that nothing spills outside the box */
+    overflow: hidden;
+    height: 250px;
 }
 
 .portfolio-item-text {
@@ -74,11 +132,10 @@ body, html {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for the text */
-    color: white; /* Text color */
-    padding: 1px; /* Padding inside the text container */
-    box-sizing: border-box; /* Ensures padding is included in width */
-    text-align: center; /* Aligns the text to the left */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1em;
+    text-align: center;
 }
 
 .portfolio-item:hover .portfolio-item-text {
@@ -88,18 +145,15 @@ body, html {
 @media (max-width: 1200px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* You can also adjust the padding here if needed */
     }
-    /* Remove the height calculation as we're using padding-top for aspect ratio */
 }
 
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px;
     }
     .portfolio-item {
-        /* Remove max-width and max-height for mobile to utilize the full width */
         max-width: none;
         max-height: none;
     }
