@@ -119,8 +119,9 @@ h1, h3 {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     max-width: 1800px;
+    margin: 0 auto;
 }
 
 .portfolio-item {
