@@ -195,14 +195,40 @@ h1, h3 {
     padding: 0 10px;
     box-sizing: border-box;
     overflow: hidden;
+    overflow-y: scroll;
     transition: height 0.3s ease;
     text-align: center;
     z-index: 3;
+
 }
 
 .portfolio-item:hover .portfolio-description {
     height: calc(100%); /* Adjust height of description on hover */
-    padding: 20px 10px; /* Add some padding */
-    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 10px; /* Add some padding */
+    background: rgba(0, 0, 0, 0.8);
 }
 
+/* Styling the scrollbar track (background) */
+.portfolio-description::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+/* Styling the scrollbar handle */
+.portfolio-description::-webkit-scrollbar-thumb {
+    background-color: #888; /* Darker gray scrollbar handle */
+}
+
+/* Styling the scrollbar handle on hover */
+.portfolio-description::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Even darker color on hover */
+}
+
+.portfolio-description {
+    /* Your existing styles */
+    overflow-y: auto; /* Keep the scrollbar functionality */
+}
+
+/* Set a smaller width for the scrollbar */
+.portfolio-description::-webkit-scrollbar {
+    width: 8px;
+}
