@@ -1,97 +1,100 @@
 body, html {
     height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', serif;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    font-size: 1.1em;
 }
 
 p {
-    font-size: 1.2em;
+    margin: 0.5%;
 }
 
-h1, h3 {
-    margin: 5px;
+h1 { /* This will set the font size for ALL h1 tags */
+    font-size: 2em;
 }
 
-.background-image {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+.divisor {
+    width: 85%;
+    align-content: center;
 }
-
-.background-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* This adds a dark overlay; you can adjust the last number for opacity */
-    z-index: -1;
-}
-
 
 /* ------------------*/
 /* About Me Section */
 /* ------------------*/
 
 .profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    scroll-snap-align: start;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure it takes up full viewport height */
 }
 
-.site-header h1 {
-    font-size: 5em;
-    position: relative; /* Changed to relative */
-    text-align: center;
-    color: white;
+.profile-info {
+    display: table; /* Use table layout for easier alignment */
     width: 100%;
-    margin-top: 50px; /* Added margin-top */
+    max-width: 1200px;
+    margin: 0; /* Center the table */
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
+    display: table-cell; /* Treat the image as a table cell */
+    width: 250px;
+    height: 270px;
+    border-radius: 1%;
     object-fit: cover;
-    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-left: 20px;
+    margin-top: 40px;
 }
 
 .about-me {
-    text-align: center;
-    color: white;
-    max-width: 900px;
-    position: relative;
-    z-index: 2;
-    /* Added margin-top */
-    margin: 20px 15px 50px;
+    display: table-cell; /* Treat the text as a table cell */
+    vertical-align: top; /* Align to the top of the cell */
 }
 
-@media (max-height: 700px) {  /* Adjust the height based on your content */
-    body {
-        scroll-snap-type: none;
-    }
+.about-me p {
+    margin-top: 0;
+    font-size: 2em;
 }
+
+.about-me p {
+    font-size: 1.2em;
+}
+
+.about-me b { /* Make your name stand out */
+    font-size: 2em;
+    display: block; /* Put the name on its own line */
+}
+
+.social-icons {
+    display: flex; /* Arrange icons horizontally */
+    justify-content: left; /* Center horizontally */
+    margin-top: 30px; /* Add spacing above icons */
+}
+
+.social-icons a {
+    margin: 0 10px; /* Add spacing between icons */
+}
+
+.social-icons img {
+    width: 32px; /* Adjust icon size as needed */
+    height: 32px;
+}
+
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
     .about-me {
         padding: 15px;
         margin-top: 10px;
-        max-width: 90%; /* Allow more space on the sides on smaller screens */
+        max-width: 90%;
     }
     .projects-section {
-        padding-top: 30px; /* Adjust as needed for smaller screens */
+        padding-top: 30px;
     }
 }
 
@@ -101,134 +104,45 @@ h1, h3 {
 /* ------------------*/
 
 .projects-section {
+    display: flex; /* Use flexbox to center projects-container */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
     min-height: 100vh;
-    scroll-snap-align: start;
+    text-align: left; /* Left align the Projects header */
+    padding-top: 100px;
 }
 
-.projects-header h1 {
-    font-size: 5em;
-    text-align: center;
-    color: white;
-    position: relative; /* Changed from absolute to relative */
-    padding-top: 10px;
+.projects-container {
+    max-width: 1200px; /* Limit the container width */
+    margin: 0 auto;  /* Center the container itself */
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    max-width: 1800px;
-    margin: 0 auto;
-}
-
-.portfolio-item {
-    position: relative;
-    font-size: 1em;
-    width: 100%;
-    padding-top: 60%;
-    background-color: rgba(255, 255, 255, 0.3);
+.project {
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: background-color 0.3s;
-    max-width: 600px;
-    max-height: 500px;
-    margin: auto;
-    overflow: hidden;
-    cursor: pointer;
+    margin-bottom: 40px; /* Add spacing between projects */
+    background-color: white; /* Optional background for each project */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
 }
 
-.portfolio-item-text {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(25, 25, 25, 0.5);
-    color: white;
-    padding: 0;
-    text-align: center;
-    z-index: 2;
-}
-
-.portfolio-item:hover .portfolio-item-text {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
-}
-
-@media (max-width: 1200px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    .portfolio-item {
-        max-width: none;
-        max-height: none;
-        height: auto; /* Set the height to auto to fit the content */
-    }
-}
-
-.portfolio-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.project-image {
+    width: 500px;
+    height: 250px; /* Adjust as needed */
+    margin-right: 30px;
     object-fit: cover;
-    z-index: 1; /* Set a z-index lower than the text to keep the text above */
 }
 
-.portfolio-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0; /* Initially no height */
-    color: white;
-    padding: 0 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-    overflow-y: scroll;
-    transition: height 0.3s ease;
-    text-align: center;
-    z-index: 3;
-
+.project-description {
+    flex: 1;
 }
 
-.portfolio-item:hover .portfolio-description {
-    height: calc(100%); /* Adjust height of description on hover */
-    padding: 10px 10px; /* Add some padding */
-    background: rgba(0, 0, 0, 0.8);
+.project-description h2 {
+    margin-bottom: 10px; /* Add spacing below title */
 }
 
-/* Styling the scrollbar track (background) */
-.portfolio-description::-webkit-scrollbar-track {
-    background-color: #f5f5f5; /* Light gray background */
-}
-
-/* Styling the scrollbar handle */
-.portfolio-description::-webkit-scrollbar-thumb {
-    background-color: #888; /* Darker gray scrollbar handle */
-}
-
-/* Styling the scrollbar handle on hover */
-.portfolio-description::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Even darker color on hover */
-}
-
-.portfolio-description {
-    /* Your existing styles */
-    overflow-y: auto; /* Keep the scrollbar functionality */
-}
-
-/* Set a smaller width for the scrollbar */
-.portfolio-description::-webkit-scrollbar {
-    width: 8px;
+.project-description p {
+    font-size: 1.1em; /* Slightly smaller font for description */
+    line-height: 1.5;
 }

@@ -5,99 +5,65 @@
     <title>Rhys March</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32"> <!-- Favicon link -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="background-image" style="background-image: url('images/background_image.jpg');"></div>
+<section class="profile-section">
+    <div class="profile-info">
+        <div class="about-me">
+            <h1>Rhys March</h1>
+            <p>I am a MComp Computer Science student at Newcastle University, with a strong interest in Cybersecurity.</p>
+            <p>My technical skills include Python, C#, and Web Development, and I have experience using Wireshark and Linux.</p>
+            <div class="social-icons">
+                <a href="https://github.com/RhysMarch" target="_blank" rel="noopener noreferrer">
+                    <img src="images/github-mark.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/rhys-march-4ab1a8217/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/iconmonstr-linkedin-3.svg" alt="LinkedIn">
+                </a>
+                <a href="https://x.com/RhysM1810" target="_blank" rel="noopener noreferrer">
+                    <img src="images/twitter-x.svg" alt="Twitter/X">
+                </a>
+            </div>
+        </div>
+        <img src="images/rhys.jpg" alt="Rhys March" class="profile-pic">
 
-<div class="profile-section">
-    <header class="site-header">
-        <h1>Rhys March</h1>
-    </header>
-    <img src="images/rhys.jpg" alt="Rhys" class="profile-pic">
-    <div class="about-me">
-        <p>
-            I am studying MComp Computer Science (G405) at Newcastle University.
-        </p>
-        <p>
-            I have experience with Python, Web Development (including frameworks such as Django & Bootstrap), JavaScript, and C#.
-            I also have some experience with Java, Docker, Linux and Unity.
-        </p>
-        <p>
-            My projects can be seen below!
-        </p>
     </div>
-</div>
-
-<div class="projects-section">
-    <header class="projects-header">
+</section>
+<hr class="divisor">
+<section class="projects-section">
+    <div class="projects-container">
         <h1>Projects</h1>
-    </header>
-    <div class="portfolio-grid">
-        <div class="portfolio-item">
-            <a href="https://github.com/RhysMarch/Boids_Algorithm" target="_blank">
-                <img src="images/boids.gif" alt="Boids Algorithm Visualisation" class="portfolio-gif">
-                <div class="portfolio-item-text">
-                    <h3>Boids Algorithm</h3>
-                </div>
-                <div class="portfolio-description">
-                    A simulation of the Boids algorithm which demonstrates the flocking behavior of birds.
-                    This project utilizes Three.js and dat.GUI for the 3D visualisations and interactive controls.
-                    You can change the number of boids, their speed, disable specific behaviours, etc.
-                    <br>
-                    <br>
-                    Click to view the Repository, which includes a Live Demo.
-                </div>
-            </a>
-        </div>
-        <div class="portfolio-item">
-            <a href="https://rhysmarch.github.io/Meal_Mate_Showcase/" target="_blank">
-                <img src="images/Meal_Mate.gif" alt="Meal Mate Web Application" class="portfolio-gif">
-                <div class="portfolio-item-text">
-                    <h3>Meal Mate Web Application</h3>
-                </div>
-                <div class="portfolio-description">
-                    A second-year university team project between me and 4 others.
-                    Meal Mate is a web application aimed at reducing food waste and achieving the sustainability goal of zero hunger.
-                    <br>
-                    <br>
-                    I stepped up as the team leader, ensuring we stayed organised and in sync throughout the project.
-                    My responsibilities included task delegation, initialising our project repository with the base code,
-                    and configuring Docker for everyone for local database testing. I also took on the review of code contributions to maintain quality
-                    and I created a complex Gantt Chart to map the planning of our project.
-                    <br>
-                    <br>
-                    Meal Mate contains many features, some of which I developed and or helped with.
 
-                </div>
-            </a>
-        </div>
-        <div class="portfolio-item">
-            <!--  image or other content here -->
-            <div class="portfolio-item-text">
-                <h3>Project 3</h3>
+        <div class="project">
+            <img src="images/gif.gif" alt="Picosniff" class="project-image">
+            <div class="project-description">
+                <h2>Picosniff</h2>
+                <p>PicoSniff is a lightweight, user-friendly packet sniffer designed for network monitoring on both traditional and embedded systems. It's a terminal-based application that provides real-time packet capture and analysis, with features for visualising network traffic and detecting potential network threats.</p>
+                <a href="https://github.com/RhysMarch/Picosniff" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </div>
-        <div class="portfolio-item">
-            <!--  image or other content here -->
-            <div class="portfolio-item-text">
-                <h3>Project 4</h3>
+
+        <div class="project">
+            <img src="images/Meal_Mate.gif" alt="Project 2 GIF" class="project-image">
+            <div class="project-description">
+                <h2>Meal Mate</h2>
+                <p>Meal Mate is a web application aimed at reducing food waste and achieving the goal of zero hunger. Meal Mate features many functionalities that help users reduce food waste and make a positive impact on the environment.</p>
+                <a href="https://github.com/RhysMarch/Meal_Mate_Showcase" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </div>
-        <div class="portfolio-item">
-            <!--  image or other content here -->
-            <div class="portfolio-item-text">
-                <h3>Project 5</h3>
+
+        <div class="project">
+            <img src="images/boids.gif" alt="Project 2 GIF" class="project-image">
+            <div class="project-description">
+                <h2>Boids Simulation</h2>
+                <p>A 2D simulation of the Boids Algorithm, rendered using Three.js and controlled interactively with Dat.GUI. The simulation illustrates the flocking behaviour of birds</p>
+                <a href="https://github.com/RhysMarch/Boids_Algorithm" target="_blank" rel="noopener noreferrer">View on GitHub</a>
             </div>
         </div>
-        <div class="portfolio-item">
-            <!--  image or other content here -->
-            <div class="portfolio-item-text">
-                <h3>Project 6</h3>
-            </div>
-        </div>
+
     </div>
-</div>
-
+</section>
+<hr class="divisor">
 </body>
 </html>
