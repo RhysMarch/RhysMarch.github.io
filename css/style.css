@@ -1,10 +1,10 @@
-body, html {
-    height: 100%;
+html, body {
     font-family: 'Roboto', serif;
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     font-size: 1.1em;
 }
+
 
 p {
     margin: 0.5%;
@@ -14,10 +14,6 @@ h1 { /* This will set the font size for ALL h1 tags */
     font-size: 2em;
 }
 
-.divisor {
-    width: 85%;
-    align-content: center;
-}
 
 /* ------------------*/
 /* About Me Section */
@@ -40,7 +36,7 @@ h1 { /* This will set the font size for ALL h1 tags */
 .profile-pic {
     display: table-cell; /* Treat the image as a table cell */
     width: 250px;
-    height: 270px;
+    height: 250px;
     border-radius: 1%;
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
