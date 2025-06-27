@@ -3,15 +3,15 @@
 /* ─── VARIABLES ───────────────────────────────────────────────────────── */
 :root {
     --clr-bg:           #ECF0F1;
-    --clr-sidebar-bg:   #e0e0e0;
+    --clr-sidebar-bg: #e3e3e3;
     --clr-card-bg:      #FFFFFF;
-    --clr-text: #000000;
+    --clr-text:         #000000;
     --clr-accent:       #000000;
     --clr-border:       #D0D3D4;
 
     /* Project sizing */
     --project-width:    320px;
-    --img-height:       200px;
+    --img-height:       150px;
 }
 
 /* ─── RESET & BASE ───────────────────────────────────────────────────── */
@@ -128,7 +128,8 @@ hr {
     margin-left: 360px;
     width: calc(100% - 360px);
     height: 100vh;
-    padding: 3rem;
+    padding-top: 1rem;
+    padding-left: 3rem;
     box-sizing: border-box;
     overflow-y: auto;
 }
@@ -137,12 +138,14 @@ hr {
 .projects-container h2 {
     font-size: 2rem;
     color: var(--clr-accent);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
 }
 .projects-container h3 {
     font-size: 1.4rem;
-    margin: 1.5rem 0 0.8rem;
+    margin: 1rem 0 0.8rem;
     color: var(--clr-text);
+    padding-left: 50px;
 }
 
 /* ─── PROJECTS GRID ─────────────────────────────────────────────────── */
@@ -155,13 +158,10 @@ hr {
     overflow-y: hidden;
     padding-bottom: 0.5rem;
     scroll-behavior: smooth;
+    padding-left: 50px;
 }
-.projects-grid::-webkit-scrollbar {
-    display: none;
-}
-.projects-grid {
-    scrollbar-width: none;
-}
+
+
 
 /* ─── PROJECT CARDS ─────────────────────────────────────────────────── */
 .project-card {
@@ -213,9 +213,13 @@ hr {
         width: 100%;
         height: auto;
         overflow-y: visible;
-        padding: 1rem;
-        border-right: none;
         border-bottom: 1px solid var(--clr-border);
+
+        /* Override the desktop padding */
+        padding: 1rem;
+
+        /* Stop centering vertically: pin everything to the top */
+        justify-content: flex-start;
     }
 
     /* Scale sidebar content down to fit */
@@ -257,8 +261,39 @@ hr {
         height: auto;
     }
 
-    /* Tweak project-grid gaps */
     .projects-grid {
-        gap: 0.75rem;
+        display: flex;            /* still use flex, but... */
+        flex-direction: column;   /* stack items top→bottom */
+        flex-wrap: nowrap;        /* no wrapping needed */
+        overflow-x: visible;      /* no horizontal scroll */
+        padding-bottom: 0;        /* remove extra bottom padding */
+        padding-left: 0;
+    }
+
+    /* Each card fills the container */
+    .project-card {
+        flex: none;               /* ignore flex-grow/shrink */
+        width: 100%;              /* full width of parent */
+        margin-bottom: 1rem;      /* space between cards */
+        max-width: none;          /* override any fixed max-width */
+    }
+
+    .projects-container h3 {
+        font-size: 1.4rem;
+        margin: 1rem 0 0.8rem;
+        color: var(--clr-text);
+        padding-left: 0;
+    }
+
+    /* Optional: tighten up margins/paddings on card contents */
+    .project-card img {
+        height: auto;
+    }
+    .project-card h4,
+    .project-card p,
+    .project-card a {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
     }
 }
+
