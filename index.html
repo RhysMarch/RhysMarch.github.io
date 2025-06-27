@@ -2,70 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rhys March</title>
+    <title>Rhys March • Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32"> <!-- Favicon link -->
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="profile-section">
-    <div class="profile-info">
-        <div class="about-me">
-            <h1>Rhys March</h1>
-            <p>I am an MComp Computer Science student at Newcastle University with a passion for software development, web development and cybersecurity. I specialise in Python, Kotlin, and C#.</p>
-            <p>I also have practical experience in developing real-time tools and web applications, with the use of tools such as Docker, GitHub and Intellij.</p>
-            <div class="social-icons">
-                <a href="https://github.com/RhysMarch" target="_blank" rel="noopener noreferrer">
-                    <img src="images/github-mark.svg" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/rhys-march-4ab1a8217/" target="_blank" rel="noopener noreferrer">
-                    <img src="images/iconmonstr-linkedin-3.svg" alt="LinkedIn">
-                </a>
-            </div>
-        </div>
+
+<div class="portfolio">
+
+    <!-- LEFT SIDEBAR CARD -->
+    <aside class="sidebar">
         <img src="images/rhys.jpg" alt="Rhys March" class="profile-pic">
+        <h1>Rhys March</h1>
+        <p class="role">First Class MComp Computer Science Graduate @ Newcastle Uni</p>
 
-    </div>
+        <div class="social-icons">
+            <a href="https://github.com/RhysMarch" target="_blank">
+                <img src="images/github-mark.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/rhys-march-4ab1a8217/" target="_blank">
+                <img src="images/iconmonstr-linkedin-3.svg" alt="LinkedIn">
+            </a>
+        </div>
+
+        <!-- NEW: About Me in Sidebar -->
+        <div class="about-me-sidebar">
+            <h2>About Me</h2>
+            <p>
+                I am an MComp Computer Science student at Newcastle University
+                with a passion for software development, web development and cybersecurity.
+                I specialise in Python, Kotlin, and C#.
+            </p>
+            <p>
+                I also have practical experience in developing real-time tools and web applications,
+                using Docker, GitHub and IntelliJ.
+            </p>
+        </div>
+    </aside>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="main-content">
+        <!-- PROJECTS -->
+        <section id="projects" class="projects-container">
+            <h2>Projects</h2>
+
+            <h3>Software Development</h3>
+            <div class="projects-grid">
+                <!-- project card -->
+                <div class="project-card">
+                    <img src="images/gif.gif" alt="PicoSniff">
+                    <h4>PicoSniff</h4>
+                    <p>
+                        A lightweight terminal-based packet sniffer for packet analysis on both desktop
+                        and embedded systems.
+                    </p>
+                    <a href="https://github.com/RhysMarch/Picosniff" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/NetView.gif" alt="NetView">
+                    <h4>NetView</h4>
+                    <p>
+                        An intuitive and user-friendly network monitoring tool providing network device information and statistics.
+                    </p>
+                    <a href="https://github.com/RhysMarch/NetView" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+                <!-- ...other software projects -->
+            </div>
+
+            <h3>Web Development</h3>
+            <div class="projects-grid">
+                <!-- project card -->
+                <div class="project-card">
+                    <img src="images/Meal_Mate.gif" alt="Meal Mate">
+                    <h4>Meal Mate</h4>
+                    <p>
+                        A web app to reduce food waste: maps, forums, AI-powered recipes.
+                    </p>
+                    <a href="https://github.com/RhysMarch/Meal_Mate_Showcase" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/electricalwebsite.gif" alt="Connected Electrical">
+                    <h4>Connected Electrical</h4>
+                    <p>
+                        A Business site for an electrical contractor built with Nuxt & Tailwind,
+                        mobile-first and deployed via Cloudflare Pages.
+                    </p>
+                    <a href="https://connectedelectricalsw.pages.dev/" target="_blank">
+                        Visit Website
+                    </a>
+                </div>
+                <!-- ...other web projects -->
+            </div>
+        </section>
+    </main>
+
 </div>
-<hr class="divisor">
-<div class="projects-container">
-    <h1 class="projects-title">Projects</h1>
 
-    <!-- Web Projects -->
-    <h2 class="projects-subtitle">Web Development</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <img src="images/Meal_Mate.gif" alt="Meal Mate" class="project-image">
-            <h2>Meal Mate</h2>
-            <p>Meal Mate is a web app aimed at reducing food waste. Features include maps, forums, and AI-powered recipes.</p>
-            <a href="https://github.com/RhysMarch/Meal_Mate_Showcase" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project-card">
-            <img src="images/electricalwebsite.gif" alt="Connected Electrical Website" class="project-image">
-            <h2>Connected Electrical</h2>
-            <p>A business website built for an electrical contractor using Nuxt and Tailwind CSS. Designed for mobile responsiveness with a sleek, modern layout. Deployed via Cloudflare Pages.</p>
-            <a href="https://connectedelectricalsw.pages.dev/" target="_blank">Visit Website</a>
-        </div>
-    </div>
-
-    <!-- Software Projects -->
-    <h2 class="projects-subtitle">Software Development</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <img src="images/gif.gif" alt="Picosniff" class="project-image">
-            <h2>Picosniff</h2>
-            <p>PicoSniff is a lightweight, user-friendly packet sniffer for network monitoring on both traditional and embedded systems.</p>
-            <a href="https://github.com/RhysMarch/Picosniff" target="_blank">View on GitHub</a>
-        </div>
-
-        <div class="project-card">
-            <img src="images/boids.gif" alt="Boids Simulation" class="project-image">
-            <h2>Boids Simulation</h2>
-            <p>A 2D simulation of the Boids Algorithm using Three.js to demonstrate flocking behaviour.</p>
-            <a href="https://github.com/RhysMarch/Boids_Algorithm" target="_blank">View on GitHub</a>
-        </div>
-    </div>
-</div>
 </body>
 </html>

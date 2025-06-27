@@ -1,196 +1,264 @@
-html, body {
-    font-family: 'Roboto', serif;
-    scroll-snap-type: y mandatory;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-size: 1.1em;
+/* style.css */
+
+/* ─── VARIABLES ───────────────────────────────────────────────────────── */
+:root {
+    --clr-bg:           #ECF0F1;
+    --clr-sidebar-bg:   #e0e0e0;
+    --clr-card-bg:      #FFFFFF;
+    --clr-text: #000000;
+    --clr-accent:       #000000;
+    --clr-border:       #D0D3D4;
+
+    /* Project sizing */
+    --project-width:    320px;
+    --img-height:       200px;
 }
 
-body {
-    background: linear-gradient(to right, #f4f4f5, #ffffff, #f4f4f5);
-    font-family: 'Roboto', serif;
-    scroll-snap-type: y mandatory;
-    overflow-x: hidden;
-    font-size: 1.1em;
-}
-
-p {
-    margin: 0.5%;
-}
-
-h1 { /* This will set the font size for ALL h1 tags */
-    font-size: 2em;
-}
-
-.divisor {
-    border: none;
-    height: 2px;
-    background-color: #ccc; /* Light gray */
-    margin: 60px auto;       /* Space above/below */
-    width: 90%;
-}
-
-/* ------------------*/
-/* About Me Section */
-/* ------------------*/
-
-.profile-section {
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    min-height: 100vh; /* Ensure it takes up full viewport height */
-}
-
-.profile-info {
-    display: table; /* Use table layout for easier alignment */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0; /* Center the table */
-}
-
-.profile-pic {
-    display: table-cell; /* Treat the image as a table cell */
-    width: 250px;
-    height: 250px;
-    border-radius: 1%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-left: 20px;
-    margin-top: 40px;
-}
-
-.about-me {
-    display: table-cell; /* Treat the text as a table cell */
-    vertical-align: top; /* Align to the top of the cell */
-}
-
-.about-me p {
-    margin-top: 0;
-    font-size: 2em;
-}
-
-.about-me p {
-    font-size: 1.2em;
-}
-
-.about-me b { /* Make your name stand out */
-    font-size: 2em;
-    display: block; /* Put the name on its own line */
-}
-
-.social-icons {
-    display: flex; /* Arrange icons horizontally */
-    justify-content: left; /* Center horizontally */
-    margin-top: 30px; /* Add spacing above icons */
-}
-
-.social-icons a {
-    margin: 0 10px; /* Add spacing between icons */
-}
-
-.social-icons img {
-    width: 32px; /* Adjust icon size as needed */
-    height: 32px;
-}
-
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .profile-section {
-        flex-direction: column; /* Stack elements vertically on smaller screens */
-    }
-    .about-me {
-        padding: 15px;
-        margin-top: 10px;
-        max-width: 90%;
-    }
-    .projects-section {
-        padding-top: 30px;
-    }
-}
-
-
-/* ------------------*/
-/* Projects Section */
-/* ------------------*/
-
-.projects-title {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-}
-
-.projects-subtitle {
-    font-size: 1.8em;
-    font-weight: 500;
-    margin-bottom: 20px;
-    margin-top: 60px;
-    text-align: center;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 20px;
-    column-gap: 20px;
-    padding: 0 20px 20px;
-}
-
-.projects-container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.project-card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease;
-    width: 100%;
+/* ─── RESET & BASE ───────────────────────────────────────────────────── */
+* {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
-.project-card:hover {
-    transform: translateY(-5px);
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
-
-.project-image {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 15px;
-}
-
-.project-card h2 {
-    margin-bottom: 10px;
-}
-
-.project-card p {
-    flex-grow: 1;
-    font-size: 1em;
-    margin-bottom: 30px;
-}
-
-.project-card a {
-    align-self: start;
+a {
+    color: var(--clr-accent);
     text-decoration: none;
-    color: white;
-    background-color: #111;
-    padding: 10px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+}
+hr {
+    border: none;
+    height: 1px;
+    background: var(--clr-border);
+    margin: 2rem 0;
+}
+.projects-container > h2 {
+    /* Remove any extra top-space */
+    margin-top: 0.5rem;        /* or 0 if you want it flush */
+    margin-bottom: 1rem;       /* keep a bit of breathing room below */
+
+    /* Underline via a bottom border (more control than text-decoration) */
+    display: inline-block;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--clr-accent);
+}
+/* ─── LAYOUT ─────────────────────────────────────────────────────────── */
+.portfolio {
+    display: flex;
+    min-height: 100vh;
 }
 
-.project-card a:hover {
-    background-color: #333;
+/* ─── SIDEBAR ───────────────────────────────────────────────────────── */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 360px;
+    height: 100vh;
+    background: var(--clr-sidebar-bg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--clr-border);
+    overflow-y: auto;
+}
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.sidebar h1 {
+    font-size: 1.6rem;
+    color: var(--clr-accent);
+    margin-bottom: 0.5rem;
+}
+.role {
+    font-size: 0.9rem;
+    color: var(--clr-text);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.social-icons img {
+    width: 35px;
+    height: 35px;
+    filter: grayscale(100%);
+    transition: filter 0.2s;
+}
+.social-icons img:hover {
+    filter: none;
 }
 
-@media (max-width: 768px) {
+/* Sidebar About Me */
+.about-me-sidebar {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--clr-border);
+    margin-top: 1rem;
+}
+.about-me-sidebar h2 {
+    font-size: 1.2rem;
+    color: var(--clr-accent);
+    margin: 0.5rem 0 1rem;
+}
+.about-me-sidebar p {
+    font-size: 0.85rem;
+    color: var(--clr-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+/* ─── MAIN CONTENT ──────────────────────────────────────────────────── */
+.main-content {
+    margin-left: 360px;
+    width: calc(100% - 360px);
+    height: 100vh;
+    padding: 3rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* ─── PROJECT SECTIONS ───────────────────────────────────────────────── */
+.projects-container h2 {
+    font-size: 2rem;
+    color: var(--clr-accent);
+    margin-bottom: 1rem;
+}
+.projects-container h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0.8rem;
+    color: var(--clr-text);
+}
+
+/* ─── PROJECTS GRID ─────────────────────────────────────────────────── */
+.projects-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+}
+.projects-grid::-webkit-scrollbar {
+    display: none;
+}
+.projects-grid {
+    scrollbar-width: none;
+}
+
+/* ─── PROJECT CARDS ─────────────────────────────────────────────────── */
+.project-card {
+    flex: 0 0 var(--project-width);
+    display: flex;
+    flex-direction: column;
+    background: var(--clr-card-bg);
+    border: 1px solid var(--clr-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.project-card img {
+    width: 100%;
+    height: var(--img-height);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.project-card h4 {
+    margin: 0.5rem 0.75rem 0.25rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.project-card p {
+    margin: 0 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    flex: 1;
+    overflow: auto;
+}
+.project-card a {
+    margin: 0.5rem 0.75rem 0.75rem;
+    padding: 0.4rem 0;
+    text-align: center;
+    background: var(--clr-accent);
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* ─── RESPONSIVE (≤800px) ───────────────────────────────────────────────── */
+@media (max-width: 800px) {
+    /* Make sidebar auto‐height and no scroll */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding: 1rem;
+        border-right: none;
+        border-bottom: 1px solid var(--clr-border);
+    }
+
+    /* Scale sidebar content down to fit */
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 0.5rem;
+    }
+    .sidebar h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+    .role {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    .social-icons img {
+        width: 24px;
+        height: 24px;
+    }
+    .about-me-sidebar {
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    .about-me-sidebar h2 {
+        font-size: 1rem;
+        margin: 0.25rem 0;
+    }
+    .about-me-sidebar p {
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Main content spans full width */
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        height: auto;
+    }
+
+    /* Tweak project-grid gaps */
     .projects-grid {
-        grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 }
-
