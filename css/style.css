@@ -72,7 +72,7 @@ hr {
 
     /* make it scrollable without covering content */
     overflow-y: auto;
-    scrollbar-width: thin;       /* Firefox */
+    scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;    /* IE 10+ */
     scrollbar-gutter: stable;    /* reserve gutter */
 
@@ -105,7 +105,7 @@ hr {
 .social-icons img {
     width: 35px;
     height: 35px;
-    filter: grayscale(100%);
+    filter: none;
     transition: filter 0.2s;
 }
 .social-icons img:hover {
@@ -115,9 +115,8 @@ hr {
 /* Sidebar About Me */
 .about-me-sidebar {
     text-align: center;
-    padding: 1rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--clr-border);
-    margin-top: 1rem;
 }
 .about-me-sidebar h2 {
     font-size: 1.2rem;
@@ -211,6 +210,18 @@ hr {
     background: var(--clr-accent);
     color: #fff;
     border-radius: 4px;
+}
+
+/* Show only the last ~3 months of the GitHub calendar */
+#github-graph {
+    width: 300px;             /* adjust this to fit however many months you want */
+    overflow: hidden;         /* hide the older months */
+    display: flex;
+    justify-content: flex-end;/* push the calendar to the right */
+}
+
+#github-graph .float-right.color-fg-muted.d-flex.flex-items-center {
+    display: none !important;
 }
 
 /* ─── RESPONSIVE (≤800px) ───────────────────────────────────────────────── */

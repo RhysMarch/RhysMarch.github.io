@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar/dist/github-calendar.css" />
+    <script src="https://unpkg.com/github-calendar/dist/github-calendar.min.js"></script>
+
 </head>
 <body>
 
@@ -22,7 +25,7 @@
                 <img src="images/github-mark.svg" alt="GitHub">
             </a>
             <a href="https://www.linkedin.com/in/rhys-march-4ab1a8217/" target="_blank">
-                <img src="images/iconmonstr-linkedin-3.svg" alt="LinkedIn">
+                <img src="images/linkedin.svg" alt="LinkedIn">
             </a>
         </div>
 
@@ -37,6 +40,7 @@
 
             </p>
         </div>
+        <div id="github-graph"></div>
     </aside>
 
     <!-- RIGHT MAIN CONTENT -->
@@ -106,4 +110,12 @@
 </div>
 
 </body>
+<script>
+    // Replace "your-username" with yours
+    GitHubCalendar("#github-graph", "RhysMarch", {
+        responsive: true,      // auto–resize on window change
+        tooltips: true,        // show commit counts on hover
+        global_stats: false    // disable the total-stats footer
+    });
+</script>
 </html>
