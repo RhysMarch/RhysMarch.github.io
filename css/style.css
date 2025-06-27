@@ -61,13 +61,21 @@ hr {
     width: 360px;
     height: 100vh;
     background: var(--clr-sidebar-bg);
+
+    /* your regular padding + centering... */
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     border-right: 1px solid var(--clr-border);
+
+    /* make it scrollable without covering content */
     overflow-y: auto;
+    scrollbar-width: thin;       /* Firefox */
+    -ms-overflow-style: none;    /* IE 10+ */
+    scrollbar-gutter: stable;    /* reserve gutter */
+
 }
 .profile-pic {
     width: 160px;
