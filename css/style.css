@@ -3,11 +3,11 @@
 /* ─── VARIABLES ───────────────────────────────────────────────────────── */
 :root {
     --clr-bg:           #ECF0F1;
-    --clr-sidebar-bg: #e3e3e3;
-    --clr-card-bg:      #FFFFFF;
+    --clr-sidebar-bg:   #e3e3e3;
+    --clr-card-bg:      #F4F7FA;
     --clr-text:         #000000;
-    --clr-accent:       #000000;
-    --clr-border:       #D0D3D4;
+    --clr-accent:       #0078ff;
+    --clr-border:       #a1a4a6;
 
     /* Project sizing */
     --project-width:    320px;
@@ -75,7 +75,6 @@ hr {
     scrollbar-width: none;       /* Firefox */
     -ms-overflow-style: none;    /* IE 10+ */
     scrollbar-gutter: stable;    /* reserve gutter */
-
 }
 .profile-pic {
     width: 160px;
@@ -152,7 +151,7 @@ hr {
     font-size: 1.4rem;
     margin: 1rem 0 0.8rem;
     color: var(--clr-text);
-    padding-left: 50px;
+    padding-left: 15px;
 }
 
 /* ─── PROJECTS GRID ─────────────────────────────────────────────────── */
@@ -165,7 +164,7 @@ hr {
     overflow-y: hidden;
     padding-bottom: 0.5rem;
     scroll-behavior: smooth;
-    padding-left: 50px;
+    padding-left: 15px;
 }
 
 
