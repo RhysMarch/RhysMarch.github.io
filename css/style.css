@@ -7,7 +7,7 @@
     --clr-card-bg:      #F4F7FA;
     --clr-text:         #000000;
     --clr-accent:       #0078ff;
-    --clr-border:       #a1a4a6;
+    --clr-border: rgba(0, 0, 0, 0.5);
 
     /* Project sizing */
     --project-width:    320px;
@@ -206,7 +206,7 @@ hr {
     margin: 0.5rem 0.75rem 0.75rem;
     padding: 0.4rem 0;
     text-align: center;
-    background: var(--clr-accent);
+    background: #000000;
     color: #fff;
     border-radius: 4px;
 }
@@ -221,6 +221,29 @@ hr {
 
 #github-graph .float-right.color-fg-muted.d-flex.flex-items-center {
     display: none !important;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding-left: 15px;
+}
+
+.section-header h3 {
+    font-size: 1.4rem;
+    color: var(--clr-text);
+    white-space: nowrap;
+    margin: 0;
+    padding-right: 1rem;
+}
+
+.divider-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--clr-border);
+    margin-right: 50px;
 }
 
 /* ─── RESPONSIVE (≤800px) ───────────────────────────────────────────────── */
