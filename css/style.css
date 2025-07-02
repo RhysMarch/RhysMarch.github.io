@@ -12,6 +12,9 @@
     /* Project sizing */
     --project-width:    320px;
     --img-height:       150px;
+
+    --project-padding: 30px;
+    --project-padding-two: 45px;
 }
 
 /* ─── RESET & BASE ───────────────────────────────────────────────────── */
@@ -37,16 +40,35 @@ hr {
     background: var(--clr-border);
     margin: 2rem 0;
 }
-.projects-container > h2 {
-    /* Remove any extra top-space */
-    margin-top: 0.5rem;        /* or 0 if you want it flush */
-    margin-bottom: 1rem;       /* keep a bit of breathing room below */
-
-    /* Underline via a bottom border (more control than text-decoration) */
-    display: inline-block;
-    padding-bottom: 0.25rem;
-    border-bottom: 2px solid var(--clr-accent);
+.about-me-sidebar h4 {
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #000;
 }
+.about-me-sidebar ul {
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.about-me-sidebar li {
+    font-size: 0.85rem;
+    color: var(--clr-text);
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+}
+
+.projects-container > h2 {
+    display: inline-block;
+    padding-left: var(--project-padding);
+}
+
+.projects-title {
+    border-bottom: 2px solid var(--clr-accent);
+    padding-bottom: 4px;
+}
+
 /* ─── LAYOUT ─────────────────────────────────────────────────────────── */
 .portfolio {
     display: flex;
@@ -58,11 +80,10 @@ hr {
     position: fixed;
     top: 0;
     left: 0;
-    width: 360px;
+    width: 400px;
     height: 100vh;
     background: var(--clr-sidebar-bg);
 
-    /* your regular padding + centering... */
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -70,15 +91,14 @@ hr {
     justify-content: flex-start;
     border-right: 1px solid var(--clr-border);
 
-    /* make it scrollable without covering content */
     overflow-y: auto;
-    scrollbar-width: none;       /* Firefox */
-    -ms-overflow-style: none;    /* IE 10+ */
-    scrollbar-gutter: stable;    /* reserve gutter */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-gutter: stable;
 }
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 1rem;
@@ -89,17 +109,18 @@ hr {
     color: var(--clr-accent);
     margin-bottom: 0.5rem;
 }
+
 .role {
     font-size: 0.9rem;
     color: var(--clr-text);
-    opacity: 0.8;
+    opacity: 0.6;
     margin-bottom: 1rem;
     text-align: center;
 }
 .social-icons {
     display: flex;
     gap: 1rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 .social-icons img {
     width: 35px;
@@ -113,14 +134,22 @@ hr {
 
 /* Sidebar About Me */
 .about-me-sidebar {
-    text-align: center;
-    padding-top: 1rem;
+    text-align: left;
     border-top: 1px solid var(--clr-border);
+    padding-top: 1rem;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+.about-me-heading {
+    text-align: center;
+    padding-bottom: 5px;
 }
 .about-me-sidebar h2 {
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--clr-accent);
-    margin: 0.5rem 0 1rem;
 }
 .about-me-sidebar p {
     font-size: 0.85rem;
@@ -144,14 +173,12 @@ hr {
 .projects-container h2 {
     font-size: 2rem;
     color: var(--clr-accent);
-    margin-bottom: 0.5rem;
     margin-top: 1rem;
 }
 .projects-container h3 {
     font-size: 1.4rem;
-    margin: 1rem 0 0.8rem;
     color: var(--clr-text);
-    padding-left: 15px;
+    padding-left: var(--project-padding-two);
 }
 
 /* ─── PROJECTS GRID ─────────────────────────────────────────────────── */
@@ -164,10 +191,8 @@ hr {
     overflow-y: hidden;
     padding-bottom: 0.5rem;
     scroll-behavior: smooth;
-    padding-left: 15px;
+    padding-left: 60px;
 }
-
-
 
 /* ─── PROJECT CARDS ─────────────────────────────────────────────────── */
 .project-card {
@@ -213,10 +238,10 @@ hr {
 
 /* Show only the last ~3 months of the GitHub calendar */
 #github-graph {
-    width: 300px;             /* adjust this to fit however many months you want */
-    overflow: hidden;         /* hide the older months */
+    width: 300px;
+    overflow: hidden;
     display: flex;
-    justify-content: flex-end;/* push the calendar to the right */
+    justify-content: flex-end;
 }
 
 #github-graph .float-right.color-fg-muted.d-flex.flex-items-center {
@@ -226,9 +251,9 @@ hr {
 .section-header {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
     margin-bottom: 0.5rem;
     padding-left: 15px;
+    padding-top: 15px;
 }
 
 .section-header h3 {
@@ -237,6 +262,11 @@ hr {
     white-space: nowrap;
     margin: 0;
     padding-right: 1rem;
+}
+.sidebar-divider {
+    border-top: 1px solid var(--clr-border);
+    margin: 1rem 0;
+    width: 100%;
 }
 
 .divider-line {
@@ -248,7 +278,6 @@ hr {
 
 /* ─── RESPONSIVE (≤800px) ───────────────────────────────────────────────── */
 @media (max-width: 800px) {
-    /* Make sidebar auto‐height and no scroll */
     .sidebar {
         position: relative;
         width: 100%;
@@ -256,14 +285,11 @@ hr {
         overflow-y: visible;
         border-bottom: 1px solid var(--clr-border);
 
-        /* Override the desktop padding */
         padding: 1rem;
 
-        /* Stop centering vertically: pin everything to the top */
         justify-content: flex-start;
     }
 
-    /* Scale sidebar content down to fit */
     .profile-pic {
         width: 100px;
         height: 100px;
@@ -294,7 +320,6 @@ hr {
         margin-bottom: 0.5rem;
     }
 
-    /* Main content spans full width */
     .main-content {
         margin-left: 0;
         width: 100%;
@@ -303,20 +328,19 @@ hr {
     }
 
     .projects-grid {
-        display: flex;            /* still use flex, but... */
-        flex-direction: column;   /* stack items top→bottom */
-        flex-wrap: nowrap;        /* no wrapping needed */
-        overflow-x: visible;      /* no horizontal scroll */
-        padding-bottom: 0;        /* remove extra bottom padding */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        overflow-x: visible;
+        padding-bottom: 0;
         padding-left: 0;
     }
 
-    /* Each card fills the container */
     .project-card {
-        flex: none;               /* ignore flex-grow/shrink */
-        width: 100%;              /* full width of parent */
-        margin-bottom: 1rem;      /* space between cards */
-        max-width: none;          /* override any fixed max-width */
+        flex: none;
+        width: 100%;
+        margin-bottom: 1rem;
+        max-width: none;
     }
 
     .projects-container h3 {
@@ -326,7 +350,6 @@ hr {
         padding-left: 0;
     }
 
-    /* Optional: tighten up margins/paddings on card contents */
     .project-card img {
         height: auto;
     }
