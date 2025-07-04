@@ -7,7 +7,7 @@
     --clr-card-bg:      #F4F7FA;
     --clr-text:         #000000;
     --clr-accent:       #0078ff;
-    --clr-border: rgba(0, 0, 0, 0.5);
+    --clr-border: rgba(0, 0, 0, 0.3);
 
     /* Project sizing */
     --project-width:    320px;
@@ -173,7 +173,8 @@ hr {
 .projects-container h2 {
     font-size: 2rem;
     color: var(--clr-accent);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .projects-container h3 {
     font-size: 1.4rem;
@@ -358,6 +359,66 @@ hr {
     .project-card a {
         margin-left: 0.75rem;
         margin-right: 0.75rem;
+    }
+}
+.mobile-toggle {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: var(--clr-sidebar-bg);
+    text-align: center;
+    z-index: 1100;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.mobile-toggle .toggle-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.mobile-toggle .toggle-btn.active {
+    border-bottom: 2px solid var(--clr-accent);
+    opacity: 1;
+}
+@media (max-width: 600px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .sidebar{
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .sidebar,
+    .main-content {
+        display: none;
+        position: absolute;
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 3rem);
+        overflow-y: auto;
+        background: var(--clr-bg);
+        z-index: 1000;
+    }
+
+    body.show-sidebar .sidebar {
+        display: block;
+    }
+    body.show-projects .main-content {
+        display: block;
+    }
+    #github-graph {
+        display: none;
     }
 }
 

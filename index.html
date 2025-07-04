@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhys March • Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
@@ -11,6 +12,11 @@
 
 </head>
 <body>
+<!-- mobile toggles -->
+<div id="mobile-toggle" class="mobile-toggle">
+    <button id="show-sidebar" class="toggle-btn active">Profile</button>
+    <button id="show-projects" class="toggle-btn">Projects</button>
+</div>
 
 <div class="portfolio">
 
@@ -154,10 +160,32 @@
 
 </body>
 <script>
+    // Profile/Projects toggle
+    const btnSidebar  = document.getElementById('show-sidebar');
+    const btnProjects = document.getElementById('show-projects');
+    const body        = document.body;
+    function activate(tab) {
+        body.classList.remove('show-sidebar','show-projects');
+        btnSidebar .classList.remove('active');
+        btnProjects.classList.remove('active');
+        if (tab==='sidebar') {
+            body.classList.add('show-sidebar');
+            btnSidebar .classList.add('active');
+        } else {
+            body.classList.add('show-projects');
+            btnProjects.classList.add('active');
+        }
+    }
+    btnSidebar.addEventListener('click',  () => activate('sidebar'));
+    btnProjects.addEventListener('click', () => activate('projects'));
+    activate('sidebar');
+
+    // GitHub contributions calendar
     GitHubCalendar("#github-graph", "RhysMarch", {
         responsive: true,
-        tooltips: true,
-        global_stats: false // hi
+        tooltips:   true,
+        global_stats: false
     });
 </script>
+
 </html>
